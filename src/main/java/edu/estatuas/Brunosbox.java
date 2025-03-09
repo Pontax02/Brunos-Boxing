@@ -1,4 +1,4 @@
-package edu.estatuas;
+/*package edu.estatuas;
 
 public class Brunosbox
 {
@@ -55,7 +55,7 @@ public class Brunosbox
          * Crea una tarjeta de puntos de boxeo
          * a partir de la tarjeta blanca entregada
          * por el juez blanco.
-         */
+
 
         ScoreCard whiteScoreCard = new ScoreCard("WHITE");
 
@@ -189,7 +189,7 @@ public class Brunosbox
          * Calcula los puntos acumulados en cada
          * round de cada pugil y muestralo en la tarjeta.
          * Se llaman score total.
-         */
+         *
 
         //ScoreCard blueScoreCard = new ScoreCard("BLUE");
         // blueScoreCard.setRCorner("Rocky Balboa");
@@ -220,7 +220,7 @@ public class Brunosbox
          *
          * En PointsDeducted la puntuacion se almacena
          * como un número entero, no como un String.
-         */
+         *
 
         //PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
         // deducted.boxerRoundScore();
@@ -284,10 +284,11 @@ public class Brunosbox
         /**
          * Calcula el final score o puntuación total
          * de cada pugil y muestralo en la tarjeta.
-         */
+         *
 
         // System.out.println("\t FINAL SCORE: " + pinkScoreCard.getRedBoxerFinalScore() +
         //  " - " + pinkScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
     }
 }
+         **/
