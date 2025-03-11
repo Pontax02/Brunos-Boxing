@@ -1,6 +1,7 @@
 package edu.estatuas;
 
 
+
 public class ScoreCard {
     private final String color;
 
@@ -15,8 +16,8 @@ public class ScoreCard {
     }
 
 
-
-
-
-
+    @Override
+    public String toString() {
+        return "hola" + color;
+    }
 }
