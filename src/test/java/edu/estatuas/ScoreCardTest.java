@@ -3,19 +3,18 @@ package edu.estatuas;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.BeforeClass;
-import edu.estatuas.ScoreCard;
+
 public class ScoreCardTest {
 
-    private static ScoreCard card;
-
-    @BeforeClass
-    public static void setUpBefore() {
-        card = new ScoreCard("rojo");
-    }
-
     @Test
-    public void checkColorTest() {
-        String color = "rojo";
-        assertEquals(color, card.getColor());
+    public void testConstructor() {
+        // Arrange
+        String expectedColor = "Rojo";
+
+        // Act
+        ScoreCard scoreCard = new ScoreCard(expectedColor);
+
+
+        assertEquals("El color de la tarjeta debería ser 'Rojo'", expectedColor, scoreCard.getColor());
     }
 }

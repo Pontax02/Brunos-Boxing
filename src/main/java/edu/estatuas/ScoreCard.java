@@ -2,10 +2,10 @@ package edu.estatuas;
 
 
 public class ScoreCard {
-    private String color;
+    private final String color;
 
 
-   public ScoreCard(String color) {
+    public ScoreCard(String color) {
         this.color = color;
     }
 
