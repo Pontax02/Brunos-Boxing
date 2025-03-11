@@ -6,15 +6,16 @@ import org.junit.BeforeClass;
 
 public class ScoreCardTest {
 
+    private static ScoreCard sc;
+
+    @BeforeClass
+    public static void setup() {
+        sc = new ScoreCard("white","","");
+    }
+
     @Test
-    public void testConstructor() {
-        // Arrange
-        String expectedColor = "Rojo";
+    public void checkColorTest() {
 
-        // Act
-        ScoreCard scoreCard = new ScoreCard(expectedColor);
-
-
-        assertEquals("El color de la tarjeta debería ser 'Rojo'", expectedColor, scoreCard.getColor());
+        assertEquals("white", sc.getColor());
     }
 }

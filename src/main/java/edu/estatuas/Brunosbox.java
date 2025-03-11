@@ -55,17 +55,17 @@ public class Brunosbox
          * Crea una tarjeta de puntos de boxeo
          * a partir de la tarjeta blanca entregada
          * por el juez blanco.
-*/
+        */
 
-      ScoreCard whiteScoreCard = new ScoreCard("WHITE");
+      ScoreCard whiteScoreCard = new ScoreCard("WHITE","","");
 
         /**
          * Asigna el nombre de los pugiles
          * Rocky Balboa (red) vs Apollo Creed (blue)
          */
 
-       // whiteScoreCard.setRCorner("Rocky Balboa");
-           // whiteScoreCard.setBCorner("Apollo Creed");
+          whiteScoreCard.setRCorner("Rocky Balboa");
+           whiteScoreCard.setBCorner("Apollo Creed");
 
         /**
          * Muestra la tarjeta por consola con
@@ -73,7 +73,7 @@ public class Brunosbox
          * del ejercicio.
          */
 
-       // System.out.println(whiteScoreCard);
+       System.out.println(whiteScoreCard);
 
 
         /**
