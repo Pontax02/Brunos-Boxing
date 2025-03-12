@@ -12,9 +12,6 @@ public class ScoreCard {
         this.blueCorner = blueCorner;
         this.redCorner = redCorner;
     }
-
-
-
     public String getColor() {
         return this.color;
 
@@ -36,6 +33,6 @@ public class ScoreCard {
 
     @Override
     public String toString() {
-        return "\t\t\t\t\t" + this.getColor() + "\n\t\t " + this.getRcorner() + "\t " + this.getBcorner();
+        return "\t\t\t\t\t" + this.getColor() + "\n\t\t " + this.getRcorner() + "\t " + this.getBcorner() + "\n\tRound \t Score \t Round \t Score \t Round\n \tScore\tTotal\t\t\t Total\tScore";
     }
 }
