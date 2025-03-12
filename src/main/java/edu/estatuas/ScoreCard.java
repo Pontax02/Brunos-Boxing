@@ -27,9 +27,15 @@ public class ScoreCard {
         this.blueCorner = boxerName;
 
     }
+    public String getRcorner(){
+        return this.redCorner;
+    }
+    public String getBcorner(){
+        return this.blueCorner;
+    }
 
     @Override
     public String toString() {
-        return "hola" + color;
+        return "\t\t\t\t\t" + this.getColor() + "\n\t\t " + this.getRcorner() + "\t " + this.getBcorner();
     }
 }
