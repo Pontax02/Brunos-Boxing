@@ -90,10 +90,10 @@ public class Brunosbox
          * Pasa el caso test que propongo.
          */
 
-        //RegularRound round = new RegularRound("10 - 9");
-        //round.boxerRoundScore();
-        //System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
-        //      " - " + round.getBlueBoxerScore());
+        RegularRound round = new RegularRound("10 - 9");
+        round.boxerRoundScore();
+        System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
+           " - " + round.getBlueBoxerScore());
 
         /**
          * Carga en la tarjeta blanca
