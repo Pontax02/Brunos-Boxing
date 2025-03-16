@@ -11,6 +11,8 @@ public class ScoreCard {
     private String redCorner="";
     private String blueCorner="";
     public String[] judgeScoreCard;
+    private Byte redBoxerFinalScore = 0;
+    private Byte blueBoxerFinalScore = 0;
     private List<Round> rounds = new ArrayList<Round>();
 
     public ScoreCard(String color, String redCorner, String blueCorner) {
@@ -33,12 +35,16 @@ public class ScoreCard {
     }
 
 
+    public byte getNumRounds() {
+        return (byte) this.rounds.size();
+    }
 
+    public List<Round> getRounds() {
+        return Collections.unmodifiableList(this.rounds);
+    }
 
-
-
-    private void setJudgeScorecard(String[] data){
-        this.judgeScoreCard = data;
+    private void setJudgeScorecard(String[] scoreCard){
+        this.judgeScoreCard = scoreCard;
 
     }
     public String getColor() {
@@ -59,10 +65,46 @@ public class ScoreCard {
     public String getBcorner(){
         return this.blueCorner;
     }
-    private int getRedBoxerFinalScore(){
-
+    public int getRedBoxerFinalScore(){
+        if (this.redBoxerFinalScore == 0) {
+            this.redBoxerFinalScore =
+                    this.getRounds()
+                            .stream()
+                            .map(Round::getRedBoxerScore)
+                            .map(Byte::intValue)
+                            .reduce(0, Integer::sum)
+                            .byteValue();
+        }
+        return this.redBoxerFinalScore;
     }
-    private int getBlueBoxerFinalScore(){
+
+    public int getBlueBoxerFinalScore(){
+        if (this.blueBoxerFinalScore == 0) {
+            this.blueBoxerFinalScore =
+                    this.getRounds()
+                            .stream()
+                            .map(Round::getBlueBoxerScore)
+                            .map(Byte::intValue)
+                            .reduce(0, Integer::sum)
+                            .byteValue();
+        }
+        return this.blueBoxerFinalScore;
+    }
+
+
+    @Override
+    public String toString() {
+        return "\n\t\t\t   " + this.color
+                + "\n\t\t" + this.blueCorner
+                + "\t" + this.redCorner
+                + "\n\t\t\t"
+                + this.getNumRounds() + " rounds\n"
+                + this.viewRounds()
+                + "\n\t FINAL SCORE: "
+                + this.getRedBoxerFinalScore()
+                + " - "
+                + this.getBlueBoxerFinalScore()
+                + " FINAL SCORE";
 
     }
     private String viewRounds() {
@@ -89,10 +131,5 @@ public class ScoreCard {
                     .append(round.getBlueBoxerScore());
         }
         return roundsView.toString();
-    }
-
-    @Override
-    public String toString() {
-        return "\t\t\t\t\t" + this.getColor() + "\n\t\t " + this.getRcorner() + "\t " + this.getBcorner() + "\n\tRound \t Score \t Round \t Score \t Round\n \tScore\tTotal\t\t\t Total\tScore" + this.viewRounds();
     }
 }

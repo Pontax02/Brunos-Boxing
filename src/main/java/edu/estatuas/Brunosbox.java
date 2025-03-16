@@ -120,8 +120,8 @@ public class Brunosbox
          * de cada pugil y muestralo en la tarjeta.
          */
 
-        //System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() +
-        //     " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
+        System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() +
+             " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
         /**
          * Calcula los puntos acumulados en cada
@@ -129,9 +129,9 @@ public class Brunosbox
          * Se llaman score total.
          */
 
-        // System.out.println(whiteScoreCard);
-        //  System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() +
-        //        " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
+        System.out.println(whiteScoreCard);
+        System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() +
+               " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
         /**
          * Crea una clase llamada KnockdownRound
