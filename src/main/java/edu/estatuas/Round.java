@@ -1,7 +1,7 @@
 package edu.estatuas;
 
 interface Round {
-    byte getredBoxerScore();
-    byte getblueBoxerScore();
+    byte getRedBoxerScore();
+    byte getBlueBoxerScore();
     void boxerRoundScore();
 }
