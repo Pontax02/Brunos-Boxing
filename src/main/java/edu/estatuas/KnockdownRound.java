@@ -6,7 +6,7 @@ public class KnockdownRound implements Round {
     private byte blueBoxerScore;
 
     KnockdownRound(String roundScore) {
-        this.roundScore = roundScore.replaceAll("\\s", "");
+        this.roundScore = roundScore.replaceAll(" ", "");
         this.parseBoxerRoundScore();
     }
 
