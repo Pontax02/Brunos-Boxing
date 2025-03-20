@@ -15,10 +15,9 @@ public class ScoreCard {
     private Byte blueBoxerFinalScore = 0;
     private List<Round> rounds = new ArrayList<Round>();
 
-    public ScoreCard(String color, String redCorner, String blueCorner) {
+    public ScoreCard(String color) {
         this.color = color;
-        this.blueCorner = blueCorner;
-        this.redCorner = redCorner;
+
 
     }
     private void addRound(Round round) {

@@ -57,7 +57,7 @@ public class Brunosbox
          * por el juez blanco.
         */
 
-      ScoreCard whiteScoreCard = new ScoreCard("WHITE","","");
+      ScoreCard whiteScoreCard = new ScoreCard("WHITE");
 
         /**
          * Asigna el nombre de los pugiles
