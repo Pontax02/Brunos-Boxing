@@ -39,9 +39,7 @@ package edu.estatuas;
     }
 
 
-    public void boxerRoundScore() {
 
-    }
     @Override
     public String toString(){
         return this.getRedBoxerScore()+" -"+this.getBlueBoxerScore();
