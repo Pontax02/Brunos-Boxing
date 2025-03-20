@@ -5,35 +5,32 @@ import java.util.Optional;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class ScoreCard {
+
     private final String color;
-    private String redCorner="";
-    private String blueCorner="";
-    public String[] judgeScoreCard;
+    private String redCorner = "";
+    private String blueCorner = "";
+    private String[] judgeScoreCard;
     private Byte redBoxerFinalScore = 0;
     private Byte blueBoxerFinalScore = 0;
+
     private List<Round> rounds = new ArrayList<Round>();
 
     public ScoreCard(String color) {
         this.color = color;
-
-
-    }
-    private void addRound(Round round) {
-        this.rounds.add(round);
-    }
-    public void loadJudgeScoreCard(String[] judgeScoreCard) {
-        this.setJudgeScorecard(judgeScoreCard);
-
-        Optional<Round> round = Optional.empty();
-        for(String roundScore : this.judgeScoreCard) {
-            round = Optional.ofNullable(RoundFactory.getRound(roundScore));
-            round.ifPresent(this::addRound);
-        }
     }
 
+    public void setRCorner(String boxerName) {
+        this.redCorner = boxerName;
+    }
 
+    private void setJudgeScoreCard(String[] scoreCard) {
+        this.judgeScoreCard = scoreCard;
+    }
+
+    public void setBCorner(String boxerName) {
+        this.blueCorner = boxerName;
+    }
     public byte getNumRounds() {
         return (byte) this.rounds.size();
     }
@@ -42,54 +39,9 @@ public class ScoreCard {
         return Collections.unmodifiableList(this.rounds);
     }
 
-    private void setJudgeScorecard(String[] scoreCard){
-        this.judgeScoreCard = scoreCard;
-
+    private void addRound(Round round) {
+        this.rounds.add(round);
     }
-    public String getColor() {
-        return this.color;
-
-    }
-    public void setRCorner(String boxerName){
-        this.redCorner = boxerName;
-
-    }
-    public void setBCorner(String boxerName){
-        this.blueCorner = boxerName;
-
-    }
-    public String getRcorner(){
-        return this.redCorner;
-    }
-    public String getBcorner(){
-        return this.blueCorner;
-    }
-    public int getRedBoxerFinalScore(){
-        if (this.redBoxerFinalScore == 0) {
-            this.redBoxerFinalScore =
-                    this.getRounds()
-                            .stream()
-                            .map(Round::getRedBoxerScore)
-                            .map(Byte::intValue)
-                            .reduce(0, Integer::sum)
-                            .byteValue();
-        }
-        return this.redBoxerFinalScore;
-    }
-
-    public int getBlueBoxerFinalScore(){
-        if (this.blueBoxerFinalScore == 0) {
-            this.blueBoxerFinalScore =
-                    this.getRounds()
-                            .stream()
-                            .map(Round::getBlueBoxerScore)
-                            .map(Byte::intValue)
-                            .reduce(0, Integer::sum)
-                            .byteValue();
-        }
-        return this.blueBoxerFinalScore;
-    }
-
 
     @Override
     public String toString() {
@@ -104,8 +56,44 @@ public class ScoreCard {
                 + " - "
                 + this.getBlueBoxerFinalScore()
                 + " FINAL SCORE";
-
     }
+
+    public void loadJudgeScoreCard(String[] judgeScoreCard) {
+        this.setJudgeScoreCard(judgeScoreCard);
+
+        Optional<Round> round = Optional.empty();
+        for(String roundScore : this.judgeScoreCard) {
+            round = Optional.ofNullable(RoundFactory.getRound(roundScore));
+            round.ifPresent(this::addRound);
+        }
+    }
+
+    public byte getRedBoxerFinalScore() {
+        if (this.redBoxerFinalScore == 0) {
+            this.redBoxerFinalScore =
+                    this.getRounds()
+                            .stream()
+                            .map(Round::getRedBoxerScore)
+                            .map(Byte::intValue)
+                            .reduce(0, Integer::sum)
+                            .byteValue();
+        }
+        return this.redBoxerFinalScore;
+    }
+
+    public int getBlueBoxerFinalScore() {
+        if (this.blueBoxerFinalScore == 0) {
+            this.blueBoxerFinalScore =
+                    this.getRounds()
+                            .stream()
+                            .map(Round::getBlueBoxerScore)
+                            .map(Byte::intValue)
+                            .reduce(0, Integer::sum)
+                            .byteValue();
+        }
+        return this.blueBoxerFinalScore;
+    }
+
     private String viewRounds() {
 
         StringBuilder roundsView = new StringBuilder();
