@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 
 public class ScoreCardTest {
 
-    private static ScoreCard sc;
+    private static ScoreCard card;
     private String[] whiteScoreCard =  {"9 - 10",
             "9 - 10",
             "9 - 10",
@@ -31,19 +31,19 @@ public class ScoreCardTest {
 
     @BeforeClass
     public static void setup() {
-        sc = new ScoreCard("white");
+        card = new ScoreCard("white");
     }
 
     @Test
     public void checkColorTest() {
 
-        assertEquals("white", sc.getColor());
+        assertEquals("white", card.getColor());
     }
     @Test
     public void checkCornerTest() {
 
-        assertEquals("Rocky Balboa",sc.getRcorner());
-        assertEquals("Apollo Creed",sc.getBcorner());
+        assertEquals("Rocky Balboa",card.getRcorner());
+        assertEquals("Apollo Creed",card.getBcorner());
 
 
     }
